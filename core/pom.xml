@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>arez-core</artifactId>
+  <packaging>jar</packaging>
+  <name>Arez Core</name>
+  <description>Arez Core</description>
+  
+  <parent>
+    <groupId>org.realityforge.arez</groupId>
+    <artifactId>arez-parent</artifactId>
+    <version>0.209-SNAPSHOT</version>
+  </parent>
+  <dependencies>
+    <dependency>
+      <groupId>org.realityforge.org.jetbrains.annotations</groupId>
+      <artifactId>org.jetbrains.annotations</artifactId>
+      <version>1.7.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.realityforge.braincheck</groupId>
+      <artifactId>braincheck-core</artifactId>
+      <version>1.31.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.realityforge.grim</groupId>
+      <artifactId>grim-annotations</artifactId>
+      <version>0.09</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.testng</groupId>
+      <artifactId>testng</artifactId>
+      <version>6.11</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.realityforge.guiceyloops</groupId>
+      <artifactId>guiceyloops</artifactId>
+      <version>0.113</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>guru.nidi</groupId>
+      <artifactId>jdepend</artifactId>
+      <version>2.9.5</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.realityforge.braincheck</groupId>
+      <artifactId>braincheck-testng</artifactId>
+      <version>1.31.0</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <systemPropertyVariables>
+            <arez.diagnostic_messages_file>src/test/java/arez/diagnostic_messages.json</arez.diagnostic_messages_file>
+            <braincheck.environment>development</braincheck.environment>
+            <arez.environment>development</arez.environment>
+            <arez.core.compile_target>target/classes</arez.core.compile_target>
+          </systemPropertyVariables>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
