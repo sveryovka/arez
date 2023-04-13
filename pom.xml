@@ -39,6 +39,7 @@
     <modules>
         <module>core</module>
         <module>processor</module>
+        <module>integration-tests</module>
     </modules>
 
 
